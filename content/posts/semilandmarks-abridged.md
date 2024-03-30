@@ -30,9 +30,7 @@ There are many cases in nature where the structures of homology are contiguous r
 
 For example, there are curving structures like the outline of a butterfly’s wings, or even surfaces, like the entire human "brain case" (Figure 1).
 
-
-![](/images/semilmks_neurocranial_anim.gif)**Figure 1**. The human neurocranial vault. While there is a dearth of discrete landmarks, the entire surface can be readily apprehended as homologous.  
-Polygon data is from BodyParts3D, CC BY-SA 2.1 jp, https://commons.wikimedia.org/w/index.php?curid=37589706
+{{< figure src="/images/semilmks_neurocranial_anim.gif" attr="**Figure 1**. The human neurocranial vault. While there is a dearth of discrete landmarks, the entire surface can be readily apprehended as homologous. Polygon data is from BodyParts3D, CC BY-SA 2.1 jp" align=center link="https://commons.wikimedia.org/w/index.php?curid=37589706" target="_blank" >}}
 
 There may not be any single identifiable landmark on these contiguous regions. And yet the entire machinery of Geometric Morphometrics relies on landmarks sets.
 
@@ -52,16 +50,13 @@ A naive strategy to relating curves/surfaces would be to sample them with equidi
 
 Unfortunately, this could lead to spurious shape variations.
 
+{{< figure src="/images/semilmks_in_3d_rect.png?w=1024" caption="**Figure 2**. Notice how point 24 occurs at the corner of specimens **a** and **c** but not **b**. From [^1] (sorry Hugo shortcode rendering sucks)." align=center target="_blank" >}}
 
-![](/images/semilmks_in_3d_rect.png?w=1024)**Figure 2**. Notice how point 24 occurs at the corner of specimens **a** and **c** but not **b**. From [^1].
+For example, imagine regularly sampling the outlines of rectangular specimens. The corners of two specimens could very well become wrongly misaligned (Figure 2, source [^1]).
 
-For example, imagine regularly sampling the outlines of rectangular specimens. The corners of two specimens could very well become wrongly misaligned (Figure 2).
+{{< figure src="/images/semilmks_in_3d_rectwarp.png?w=1024" caption="**Figure 3**. TPS deformation grids from a) **2a** to **2b** and b) **2a** to **2c** reveal the flaw in equidistant sampling. Specifically, notice the spurious increased bending from **2a** to **2b** owing to misaligned corner landmarks. From [^1] (sorry Hugo shortcode rendering sucks)" align=center target="_blank" >}}
 
-
-![](/images/semilmks_in_3d_rectwarp.png?w=1024)**Figure 3**. TPS deformation grids from a) **2a** to **2b** and b) **2a** to **2c** reveal the flaw in equidistant sampling. Specifically, notice the spurious increased bending from **2a** to **2b** owing to misaligned corner landmarks. From [^1].
-
-Of course, the corners are likely truly homologous, and so shape differences from misaligned corners would be an artifact of our sampling (Figure 3).
-
+Of course, the corners are likely truly homologous, and so shape differences from misaligned corners would be an artifact of our sampling (Figure 3, source [^1]).
 
 But there is a baby in the bath water. What if we grant the equidistant landmarks a chance to "slide" about the curve/surface so as to minimize the artificial differences?🤔
 
@@ -75,8 +70,7 @@ Semilandmarks are landmark samples on curves/surfaces that get some leeway to "s
 
 Take the illustration in Figure 4. Here $c_1$, $c_2$ are curves, while $s_1$ is a surface patch with a polar grid.
 
-
-![](/images/semilmks_illus_terrible.png)**Figure 4**. Ideal sliding step for a member from a made-up species. The curve semilandmark $a$ slides to $a^{\prime}$ along $c_1$. Similarly, $b$ slides on surface $s_1$ to $b^{\prime}$.
+{{< figure src="/images/semilmks_illus_terrible.png" caption="**Figure 4**. Ideal sliding step for a member from a made-up species. The curve semilandmark $a$ slides to $a^{\prime}$ along $c_1$. Similarly, $b$ slides on surface $s_1$ to $b^{\prime}$." align=center target="_blank" >}}
 
 An *ideal* "sliding step" would let $a$ slide along curve $c_1$ and settle into $a^{\prime}$. Similarly, $b$ would slide on the surface patch $s_1$ and settle into $b^{\prime}$.
 

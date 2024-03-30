@@ -154,26 +154,22 @@ img {
    I might have chatgippitied this.
  */
 
-/* Base styles for KaTeX */
+/* Adjust KaTeX overflow properties to prevent unnecessary scrollbars */
 .katex {
-    overflow-x: auto; /* Enable horizontal scrolling when needed */
-    overflow-y: hidden; /* Hide vertical scrollbars */
-    max-width: 100%; /* Prevent overflow beyond the element's width */
-    min-width: 0; /* Allow the element to shrink below its default size */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    overflow-y: hidden; /* Prevent vertical scrollbars */
+    max-width: 100%; /* Ensure content does not overflow width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-/* Styles targeting block-level KaTeX specifically */
+/* Adjustments for block-level KaTeX */
 .katex-display {
-    width: auto; /* Allow the element's width to adjust based on content size */
-    min-width: 50vw; /* Prevent the formula from becoming too small on narrow screens */
+    overflow-y: hidden; /* Specifically targeting block-level KaTeX */
 }
 
-/* Adjust the font size for smaller screens */
+/* Optional: Adjust the font size for smaller screens */
 @media (max-width: 768px) {
     .katex {
         font-size: 85%; /* Adjust based on preference */
-    }
-    .katex-display {
-        min-width: 75vw; /* Allow more aggressive shrinking on very small screens */
     }
 }

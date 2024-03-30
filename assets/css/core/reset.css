@@ -149,3 +149,31 @@ img {
     display: block;
     max-width: 100%;
 }
+
+/* Trying to make sure katex renders nicely on smaller devices.
+   I might have chatgippitied this.
+ */
+
+/* Base styles for KaTeX */
+.katex {
+    overflow-x: auto; /* Enable horizontal scrolling when needed */
+    overflow-y: hidden; /* Hide vertical scrollbars */
+    max-width: 100%; /* Prevent overflow beyond the element's width */
+    min-width: 0; /* Allow the element to shrink below its default size */
+}
+
+/* Styles targeting block-level KaTeX specifically */
+.katex-display {
+    width: auto; /* Allow the element's width to adjust based on content size */
+    min-width: 50vw; /* Prevent the formula from becoming too small on narrow screens */
+}
+
+/* Adjust the font size for smaller screens */
+@media (max-width: 768px) {
+    .katex {
+        font-size: 85%; /* Adjust based on preference */
+    }
+    .katex-display {
+        min-width: 75vw; /* Allow more aggressive shrinking on very small screens */
+    }
+}

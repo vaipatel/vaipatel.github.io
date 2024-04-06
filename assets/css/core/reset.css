@@ -169,7 +169,13 @@ img {
 
 /* Optional: Adjust the font size for smaller screens */
 @media (max-width: 768px) {
-    .katex {
+    .katex-display {
         font-size: 85%; /* Adjust based on preference */
+    }
+}
+
+@media (max-width: 448px) {
+    .katex-display {
+        font-size: 75%; /* Adjust based on preference */
     }
 }

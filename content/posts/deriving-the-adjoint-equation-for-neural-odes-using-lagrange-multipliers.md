@@ -75,16 +75,21 @@ Simplify terms
 Note: Rampant blatant argument and transpose suppression in what follows.😱
 
 Let’s begin by investigating the integral at the end of (4).
-$$\begin{aligned} \int_{t_0}^{t_1} \lambda(t) F dt &= \int_{t_0}^{t_1} \lambda(t) (\dot{z(t)} \\ – \\ f)dt \\\\ &= \int_{t_0}^{t_1} \lambda(t) \dot{z(t)} dt \enskip – \int_{t_0}^{t_1} \lambda(t) f dt \tag{6} \end{aligned}$$
+$$
+\begin{aligned}
+\int_{t_0}^{t_1} \lambda(t) F dt &= \int_{t_0}^{t_1} \lambda(t) (\dot{z(t)} \medspace – \medspace f)dt \\\\
+&= \int_{t_0}^{t_1} \lambda(t) \dot{z(t)} dt \enskip – \int_{t_0}^{t_1} \lambda(t) f dt \tag{6}
+\end{aligned}
+$$
 
 Using [Integration by Parts](https://en.wikipedia.org/wiki/Integration_by_parts) for the first of the two terms, we see
-$$\begin{aligned} \int_{t_0}^{t_1} \lambda(t) \dot{z(t)} dt &= \lambda(t)z(t) \big\vert_{t_0}^{t_1} – \int_{t_0}^{t_1} z(t) \dot{\lambda(t)} dt \\\\ &= \lambda(t_1)z(t_1) \\ – \\ \lambda(t_0)z_{t_0} \\\\ &- \int_{t_0}^{t_1} z(t) \dot{\lambda(t)} dt \end{aligned} \tag{7}$$
+$$\begin{aligned} \int_{t_0}^{t_1} \lambda(t) \dot{z(t)} dt &= \lambda(t)z(t) \big\vert_{t_0}^{t_1} – \int_{t_0}^{t_1} z(t) \dot{\lambda(t)} dt \\\\ &= \lambda(t_1)z(t_1) \medspace – \medspace \lambda(t_0)z_{t_0} \\\\ &- \int_{t_0}^{t_1} z(t) \dot{\lambda(t)} dt \end{aligned} \tag{7}$$
 
 Using $(7)$ in $(6)$, we get
-$$\begin{aligned} \int_{t_0}^{t_1} \lambda(t) F dt &= \lambda(t_1)z(t_1) \\ – \\ \lambda(t_0)z_{t_0} \\\\ &- \int_{t_0}^{t_1} (z \dot{\lambda} + \lambda f) dt \end{aligned}$$
+$$\begin{aligned} \int_{t_0}^{t_1} \lambda(t) F dt &= \lambda(t_1)z(t_1) \medspace – \medspace \lambda(t_0)z_{t_0} \\\\ &- \int_{t_0}^{t_1} (z \dot{\lambda} + \lambda f) dt \end{aligned}$$
 
 Bringing in the derivative with respect to $\theta$, we see
-$$\begin{aligned} \frac{\mathrm{d}}{\mathrm{d} \theta} \left\[ \int_{t_0}^{t_1} \lambda F dt \right\] &= \lambda(t_1)\frac{\mathrm{d} z(t_1)}{\mathrm{d} \theta} \\ – \\ \lambda(t_0)\overbrace{\cancel{\frac{\mathrm{d} z_{t_0} }{\mathrm{d} \theta}}^{\enskip 0}}^{z_{t_0} \text{ is input}} \\\\ &- \int_{t_0}^{t_1} (\frac{\mathrm{d} z}{\mathrm{d} \theta} \dot{\lambda} + \lambda \frac{\mathrm{d} f}{\mathrm{d} \theta} ) dt \end{aligned} \tag{8}$$
+$$\begin{aligned} \frac{\mathrm{d}}{\mathrm{d} \theta} \left\[ \int_{t_0}^{t_1} \lambda F dt \right\] &= \lambda(t_1)\frac{\mathrm{d} z(t_1)}{\mathrm{d} \theta} \medspace – \medspace \lambda(t_0)\overbrace{\cancel{\frac{\mathrm{d} z_{t_0} }{\mathrm{d} \theta}}^{\enskip 0}}^{z_{t_0} \text{ is input}} \\\\ &- \int_{t_0}^{t_1} (\frac{\mathrm{d} z}{\mathrm{d} \theta} \dot{\lambda} + \lambda \frac{\mathrm{d} f}{\mathrm{d} \theta} ) dt \end{aligned} \tag{8}$$
 
 From the Chain rule we have
 $$\frac{\mathrm{d} f}{\mathrm{d} \theta} = \frac{\partial f}{\partial \theta} + \frac{\partial f}{\partial z} \frac{\mathrm{d} z}{\mathrm{d} \theta}$$
@@ -141,7 +146,7 @@ In summary, here are the steps in one iteration of solving $\text{(PM)}$ with gr
 1.  Forward pass: Solve the ODE $(1)$-$(2)$ from time $t_0$ to $t_1$ and get the output $z(t_1)$.
 2.  Loss calculation: Calculate $L(z(t_1))$.
 3.  Backward pass: Solve ODEs $(11)$ and $(12)$ from reverse time $t_1$ to $t_0$ to get the gradient of the loss $\frac{\mathrm{d} L(z(t_1))}{ \mathrm{d} \theta}$.
-4.  Use the gradient to update the network parameters \\theta.
+4.  Use the gradient to update the network parameters $\theta$.
 
 What is the adjoint?
 --------------------

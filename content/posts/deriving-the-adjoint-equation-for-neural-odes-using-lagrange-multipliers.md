@@ -39,7 +39,7 @@ $$\tag{1} F(\dot{z(t)}, z(t), \theta, t) = \dot{z(t)} – f(z(t), \theta, t) = 0
 $$\tag{2} z(t_0) = z_{t_0}$$
 $$t_0 < t_1$$
 
-$\text{(PM)}$‘s dramatis personae a.k.a variables are as follows.
+$\text{(PM)}$'s dramatis personae a.k.a variables are as follows.
 
 *   $f$ is our neural network with parameters $\theta$
 *   $z(t_0)$ is our input, $z(t_1)$ is the output, $z(t)$ is the state reached from $z(t_0)$ at time $t \in \[t_0, t_1\]$

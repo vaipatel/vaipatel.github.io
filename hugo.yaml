@@ -1,4 +1,4 @@
-baseURL: https://vaipatel.github.io
+baseURL: https://vaipatel.com
 languageCode: en-us
 title: Vaibhav Patel
 theme: ["PaperMod"]
@@ -122,8 +122,8 @@ markup:
       unsafe: true
   highlight:
     noClasses: false
-    # anchorLineNos: true
+    anchorLineNos: true
     # codeFences: true
     # guessSyntax: true
-    # lineNos: true
-    # style: monokai
+    lineNos: true
+    style: monokai
